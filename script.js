@@ -21,8 +21,10 @@ for (let num = 1; num <= 100; num = num + 1) {
   console.log(output || num);
 }
 */
-// Exercise 3 Chessboard
+// ------ Nested loops ------
 
+// Exercise 3 Chessboard
+/*
 let size = 8;
 let board = '';
 
@@ -79,3 +81,49 @@ for (let i = 0; i < storeInventory.length; i++) {
   for (let j = 0; j < storeInventory[i].length; j++)
     console.log(storeInventory[i][j]);
 }
+*/
+// -------- FUNCTIONS ------
+
+// Minimum
+
+function Minimum(a, b) {
+  if (a < b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
+function minimum(a, b) {
+  return Math.min(a, b);
+}
+
+// Recursion
+
+function isEven(number) {
+  if (number === 0) return true;
+  else if (number === 1) return false;
+  else if (number < 2) isEven(-number);
+  else return isEven(number - 2);
+}
+
+// Bean counting
+
+function countBs(string, letter) {
+  let count = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] == letter) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+console.log(countBs('Barbara', 'a'));
+
+function count(string) {
+  return countBs(string, 'B');
+}
+
+console.log(count('Baracuda'));
